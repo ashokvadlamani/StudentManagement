@@ -1,0 +1,2 @@
+navigate to the folder where you want to download the code.
+git clone https://github.com/ashokvadlamani/StudentManagement.git
