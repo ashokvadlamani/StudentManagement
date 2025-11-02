@@ -9,19 +9,19 @@ public class StudentManagerMySql {
 	private ArrayList<Student> students;
 	public StudentManagerMySql()
 	{
-		students = new ArrayList<>();
-		getStudents();
+//		students = new ArrayList<>();
+//		getStudents();
 	}
 	public int insertStudent(Student student)
 	{
 		try(Connection conn = getConnection())
 		{
-			String insertQuery = "INSERT INTO students (id, name, standard) VALUES (?, ?, ?)";
+			String insertQuery = "INSERT INTO Students (Id, name, standard) VALUES (?, ?, ?)";
 			PreparedStatement pstmt = conn.prepareStatement(insertQuery);
 			pstmt.setInt(1, student.getId());
             pstmt.setString(2, student.getName());
             pstmt.setString(3, student.getStandard().name());
-            return pstmt.executeUpdate();
+            return pstmt.executeUpdate(); //insert, delete update
 		}
 		catch(Exception ex)
 		{
@@ -34,7 +34,7 @@ public class StudentManagerMySql {
 		String selectStmt = "SELECT id, name, standard FROM students";
 		try(Connection conn = getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(selectStmt);
-				ResultSet resultSet = pstmt.executeQuery())
+				ResultSet resultSet = pstmt.executeQuery()) //select
 		{
 			while(resultSet.next())
 			{
@@ -49,7 +49,7 @@ public class StudentManagerMySql {
 	}
 	private Connection getConnection()
 	{
-		String url = "jdbc:mysql://localhost:3306/mydatabase"; // replace with your DB name
+		String url = "jdbc:mysql://localhost:3306/Ashok"; // replace with your DB name
         String user = "root";
         String password = "pwd"; // your MySQL root password
         try {

@@ -1,0 +1,22 @@
+1. docker is a virtualization tool to run any software or program.
+
+2. we can run a software instantly in a few min and close it when it is not required.
+
+3. software runs inside a container in docker
+
+4. container is like a virtual machine
+
+5. Docker commands:
+
+	To list all running containers
+	docker ps 
+	
+	To list all running/stopped containers
+	docker ps -a
+	
+	To stop a container
+	docker stop <container_name>
+	
+	To start a container
+	docker start <container_name>
+
