@@ -8,29 +8,37 @@
 
 5. Docker commands:
 
-	To list all running containers
+	- To list all running containers
 	docker ps 
 	
-	To list all running/stopped containers
+	- To list all running/stopped containers
 	docker ps -a
 	
-	To stop a container
-	docker stop <container_name>
+	- To stop a container
+	docker stop <container_name/container_id>
 	
-	To start a container
-	docker start <container_name>
+	- To start a container
+	docker start <container_name/container_id>
 	
-	To run a container from an image (like mysql)
-	docker run --name <container_name> -e <env_variable>=<value> -p <container_port>:<machine_port> -d mysql
+	- To run a container from an image (like mysql)
+		docker run --name <container_name> -e <env_variable>=<value> -p <container_port>:<machine_port> -d <image_name>
+		docker run --name local-mysql -e MYSQL_ROOT_PASSWORD=pwd -p 3306:3306 -d mysql
 	
-	-e environment variables
-	-p port mappings
-	-d run container in detached mode
+		-e environment variables
+		-p port mappings
+		-d run container in detached mode
 	
 	
-	To connect to a running container
-	docker exec -it <container_name> <program_name> -u <user_name> -p
-	-it run container in interactive mode
+	- To connect to a running container
+		docker exec -it <container_name> <program_name> -u <user_name> -p
+		docker exec -it local-myql mysql -u root -p
+	
+		-it run container in interactive mode
+		-u user name for db
+		-p to prompt/request password
 
-    To exit out of a container
-    exit
+    - To exit out of a container
+    	exit
+    
+    
+    
